@@ -28,8 +28,20 @@ var claim5 = {
 	visitCost: 770
 }
 
-var initialList = [claim1, claim2, claim3, claim4, claim5]
+var initialList = [claim1, claim2, claim3, claim4, claim5];
+var claim6 = new claim("John Dis", "Specialist", 1500);
+var claim7 = new claim("Jane Al", "Optical", 2500);
+var claim8 = new claim("Joe Shmoe", "Emergency", 10000);
+var claim9 = new claim("Sharon Iscarin", "Emergency", 420000);
+var claim10 = new claim("Steve Eewonder", "Primary Care", 10);
 
+initialList.push(claim6);
+initialList.push(claim7);
+initialList.push(claim8);
+initialList.push(claim9);
+initialList.push(claim10);
+
+console.log(initialList);
 var totalPayedOut = 0;
 
 function claim(name, type, cost){
@@ -62,5 +74,5 @@ function amountCovered(object){
 	return (percentCovered(object)*object.visitCost);
 }
 for(var i =0;i<initialList.length;i++){
-	console.log(amountCovered(initialList[i]));
+	console.log("Paid out $" + Math.round(amountCovered(initialList[i])) + " to " + initialList[i].patientName);
 }
